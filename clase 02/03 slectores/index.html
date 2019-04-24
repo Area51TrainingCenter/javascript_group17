@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.btn{
+			display: inline-block;
+			padding: 20px;
+			background-color: black;
+			color: white;
+
+		}
+		#modal{
+			position: fixed;
+			width: 100%;
+			height: 100%;
+			left: 0px;
+			top: 0px;
+			background-color: rgba(0,0,0,0.5);
+
+		}
+		.hide-modal{
+			display: none;
+		}
+		.contenido-modal{
+			width: 600px;
+			padding: 20px;
+			background-color: white;
+			border-radius: 30px;
+			position: relative;
+			
+		}
+		.over-modal{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 100%;
+			height: 100%;
+			position: fixed;
+			left: 0px;
+			top: 0px;
+		}
+		.cerrar-modal
+		{
+			background-color: black;
+			color: white;
+			display: inline-block;
+			padding: 10px;
+			position: absolute;
+			right: 0px;
+			top: 0px;
+		}
+	</style>
+</head>
+<body>
+	<div id="modal" class="hide-modal"> 
+		<div class="over-modal">
+		<div class="contenido-modal">
+			<span id="cerrar" class="cerrar-modal">Cerrar</span>
+			<h1>Lorem ipsum dolor</h1>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam mollitia aspernatur voluptatibus odio rerum, eligendi, officia quidem quos unde at ex, omnis voluptas. Nam hic velit alias pariatur doloribus exercitationem.</p>
+		</div>
+		</div>
+	</div>
+	<h1 id="title">Lorem ipsum dolor sit amet, consectetur</h1>
+	<span id="btn-cambiar" class="btn">Cambiar Texto</span>
+	<p id="parrafo">estias, earum facilis vitae, suscipit doloribus ipsum illum amet cum <span>fugiat</span> repellat quod.</p>
+	<h2 id="tiitle_h2">Lorem ipsum <span>dolor</span>sit amet, consectetur adipisicing</h2>
+	<img src="" alt="">
+
+	<ul>
+		<li id="item1" class="item-menu">Inicio</li>
+		<li id="item2" class="item-menu">Nostros</li>
+		<li id="item3" class="item-menu">Servicios</li>
+	</ul>
+
+	<p>spiciatis facere pariatur quia alias est, suscipit quidem a tempore saepe non? Quia impedit doloribus eius.</p>
+	<script src="js/main.js"></script>
+	<style>
+		#parrafo span{
+
+		}
+	</style>
+</body>
+</html>
