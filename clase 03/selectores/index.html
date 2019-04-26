@@ -6,7 +6,17 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 
+<style>
+	.error{
+		font-weight: bold;
+		color: red;
+		padding-left: 20px;
 
+	}
+	.hide-msg{ 
+		display: none;
+	}
+</style>
 </head>
 <body>
 	<div class="container">
@@ -16,26 +26,32 @@
 			</div>
 
 			<div class="col-6">
-				<form action="">
+				<form action="http://www.google.com">
 					<div class="form-group">
-						<label for="">Nombre</label>
-						<input type="text" class="form-control">
+						<label for="">Nombre <small class="error hide-msg" id="error-nombre">Revisar el Campo</small></label>
+						<input type="text" id="inp_nombre" class="form-control">
 					</div>
 					<div class="form-group">
 						<label for="">Correo</label>
-						<input type="text" class="form-control">
+						<input type="text" id="inp_correo" class="form-control">
 					</div>
 					<div class="form-group">
 						<label for="">Contraseña</label>
-						<input type="text" class="form-control">
+						<input type="text" id="inp_contrasena" class="form-control">
 					</div>
 					<div class="form-group">
-						<button type="submit" class="btn-success btn"> Registrar</button>
+						<label for="">Facebook</label>
+						<input type="text" id="inp_facebook" class="form-control">
+					</div>
+					<div class="form-group">
+
+						<button type="button" class="btn-success btn" id="btn-grabar"> Registrar</button>
 					</div>
 				</form>
 			</div>
 			<div class="col-6">
-			
+				<h2>Detalle Registro</h2>
+				<div id="contenido_registro"></div>
 			</div>
 		</div>
 			
