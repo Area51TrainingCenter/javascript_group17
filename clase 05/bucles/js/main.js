@@ -205,4 +205,10 @@ listado_final=[{item:"Producto01",categoria:1,estado:0},
  				{item:"Producto11",categoria:3,estado:1},
  				{item:"Producto12",categoria:1,estado:1},
  				{item:"Producto13",categoria:2,estado:0}]
-
+let listado_node=document.getElementById('listado');
+let template="";
+for(producto of listado_final){
+	
+	template=template+`<li class="${producto.estado ? "activo":"inactivo"}">${producto.item}</li>`
+}
+listado_node.innerHTML=template;
