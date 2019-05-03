@@ -147,7 +147,62 @@ listado=[{item:"Producto01",categoria:1,estado:1},
         {item:"Producto12",categoria:1,estado:0},
         {item:"Producto13",categoria:2}]
 
+activos=[];
+inactivos=[];
 
+for(let i=0;i<listado.length;i++){
+let obj=listado[i];
+ 	for(propiedad in obj){
+ 		if(propiedad=="estado"){
+ 			if(obj[propiedad]==1){
+ 				activos.push(obj);
+ 			}
+ 			else{
+ 				inactivos.push(obj);
+ 			}
+ 		}
+ 		else{
+ 			console.log("el objeto no cotiene la propiedad estado");
+ 		}
+ 	}
 
+ }
+/*
+for(let i=0;i<listado.length;i++){ 
+	if(listado[i].estado==1){
+		activos.push(listado[i])
+	}
+	else if(listado[i].estado==0){
+		inactivos.push(listado[i])
+	}
+	else{
 
+	}
+}
+*/
+
+let numeros=[1,2,3,4,5,6,7];
+
+for(let i=0;i<numeros.length;i++){
+ numeros[i];
+}
+
+for(item of listado){
+	console.log(item);
+}
+//Ejemplo: plasmar en una lista html el siguiente contenido del arreglo y contemplar un estilo visual diferente para los elementos con estado : 0
+
+listado_final=[{item:"Producto01",categoria:1,estado:0},
+ 			    {item:"Producto02",categoria:2,estado:1},
+ 				{item:"Producto03",categoria:3,estado:1},
+ 				{item:"Producto04",categoria:3,estado:1},
+ 				{item:"Producto05",categoria:2,estado:1},
+ 				{item:"Producto06",categoria:1,estado:0},
+ 				{item:"Producto07",categoria:1,estado:1},
+ 				{item:"Producto08",categoria:2,estado:1},
+ 				{item:"Producto09",categoria:2,estado:0},
+ 				{item:"Producto10",categoria:3,estado:1},
+ 				{item:"Producto11",categoria:3,estado:1},
+ 				{item:"Producto12",categoria:1,estado:1},
+ 				{item:"Producto13",categoria:2,estado:0}]
 
