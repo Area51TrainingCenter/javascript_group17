@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<form action="" style="padding: 20px;">
+		<input id="dato" type="text" placeholder="ingresa valor">
+		<button id="btn-agregar" type="button">Agregar</button>
+		<button id="btn-quitar" type="button">Remover</button>
+
+	</form>
+</body>
+</html>
+
+<script>
+	let inp=document.getElementById("dato");
+	let btn=document.getElementById('btn-agregar');
+	let lista_datos=[];
+
+	btn.addEventListener("click",()=>{
+		
+
+		let valor_ingresado=inp.value;
+		//let num_elementos=lista_datos.push(valor_ingresado);
+		let num_elementos=lista_datos.unshift(valor_ingresado);
+	 	//console.log(num_elementos);
+	 	console.log(lista_datos);
+	 	if(num_elementos==3){
+	 		alert("ya no puedes ingresar más elementos")
+	 		
+	 	}
+
+	})
+
+	/*btn.addEventListener("click",tarea)
+
+
+	function tarea(){
+
+		let valor_ingresado=inp.value;
+		let num_elementos=lista_datos.push(valor_ingresado);
+	 	console.log(num_elementos);
+	 	if(num_elementos==3){
+	 		alert("ya no puedes ingresar más elementos")
+	 		btn.removeAddEventListener("click",()=>{})
+	 	}
+	}*/
+
+/*
+
+	let btn_remover=document.getElementById('btn-quitar');
+
+	btn_remover.addEventListener("click",()=>{
+			//let devuelto=lista_datos.pop()
+				let devuelto=lista_datos.shift()
+			console.log(devuelto);
+			console.log(lista_datos);
+	})
+
+
+*/
+/*
+	listado_notas=[10,12,15,24,1];
+	modificado_notas=listado_notas.map((valor)=>{
+			multiplo_dos=valor%2;
+			if(multiplo_dos==0){
+				return valor;
+			}
+			else{
+				return false;
+			}	
+	})
+	console.log(modificado_notas);
+
+
+	let listado=["a","b","c"];
+	listado.reduce(function(valor_incial,valor_actual,index,arreglo){
+			return valor_incial+valor_actual;
+	},0)
+	
+*/
+
+/*
+listado_notas=[10,12,15,24,1];
+let nuevo_listado=listado_notas.filter((item)=>{
+		console.log(item);
+		multiplo_dos=item%2;
+		if(multiplo_dos==0){
+				return item;
+		}
+
+})
+
+console.log(nuevo_listado);
+
+
+var words = ['Admin', 'Developer', 'CEO'];
+
+const result = words.filter(function(data){
+	let estado=false;
+	if(data=="Operador"){
+		estado=true;
+	}
+
+	return estado; 
+});
+
+console.log(result)
+
+
+var listado = [5, 12, 8, 130, 44];
+var found = listado.find(function(element) {
+  return element > 10;
+});
+
+console.log(found);
+
+
+var inventario = [
+    {nombre: 'manzanas', cantidad: 2},
+    {nombre: 'bananas', cantidad: 0},
+    {nombre: 'cerezas', cantidad: 5}
+];
+
+function esCereza(item) { 
+    return item.nombre == 'cerezas';
+}
+inventario.find(esCereza)
+
+
+
+var listado = [5, 12, 8, 130, 44];
+var found = listado.findIndex(function(element) {
+  return element > 10;
+});
+
+console.log(found);
+listado[found];
+
+
+var listado = [5, 12, 8, 130, 44];
+listad_nuevo;
+listado.forEach((item)=>{
+	console.log(item);
+	listado_nuevo.push(item+2);
+})
+
+*/
+
+var listado=["10","2","2019"];
+console.log(listado.join("-"));
+
+let cadena="j-c-r-t";
+cadena.split("-");
+cadena=["j","c","r","t"];
+
+</script>
