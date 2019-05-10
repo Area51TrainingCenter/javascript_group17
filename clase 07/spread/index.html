@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+</html>
+
+<script>
+
+//	let nombre=".      J  c       ";
+//	let nombre_sin_espacios=nombre.trim()  //"j  c"
+	
+
+let nombres=["juan","diego","luis"];
+
+datos(...nombres);
+
+
+
+function datos(valor1,valor2,valor3){
+console.log(valor1);
+console.log(valor2);
+console.log(valor3);
+}
+
+
+let valores=[1,2,3,4,5,76,78,4,3,2,34];
+Math.max(valores);
+Math.max(1,2,3,4,5,76,78,4,3,2,34);
+Math.max(...valores);
+
+
+
+
+function EliminarEspacios(...cadenas) {
+   for (let i=0; i < cadenas.length; i++) {
+     cadenas[i] = cadenas[i].trim();
+   }
+   return cadenas;
+ }
+
+
+lista_nombres=['aquí ', ' lados ', ' espacio',"   JC" , "Martin     "];
+
+
+let limpiandoCadenas = EliminarEspacios(...lista_nombres);
+console.log(limpiandoCadenas);
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
