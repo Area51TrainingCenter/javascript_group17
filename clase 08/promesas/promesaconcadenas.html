@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+</body>
+</html>
+
+<script type="text/javascript">
+	let promesa1=new Promise((resolve,error)=>{
+		resolve("promesa 1 resulta")
+	})
+
+	let promesa2=new Promise((resolve,error)=>{
+		resolve("promesa 2 resuleta")
+	})
+
+
+	promesa1.then((data)=>{
+		return(promesa2);
+	})
+	.then((promesaenviada)=>{
+		console.log(promesaenviada);
+	})
+	.catch((error)=>{
+		console.log("error en"+error);
+	})
+
+	let demopromesa=new Promise((res,error)=>{
+		res("hola");
+		//(error("error");
+	})
+	
+	let estado=demopromesa.then((data)=>{ return true;})// console.log(data)})
+	demopromesa.catch((data)=>{ console.log(data)})
+
+</script>

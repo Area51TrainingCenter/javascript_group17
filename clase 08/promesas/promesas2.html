@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+</body>
+</html>
+
+<script type="text/javascript">
+	let promesa1=new Promise((resolve,error)=>{
+		setTimeout(()=>{
+			resolve("ejecutando la tarea1");	
+		},4000)
+		
+	})
+	.then((data)=>{
+		console.log(data)
+	})
+	.catch((error)=>{console.log(error)})
+
+	let promesa2=new Promise((resolve,error)=>{
+		resolve("ejecutando la tarea2")
+	})
+	.then((data)=>{
+		console.log(data)
+	})
+	.catch((error)=>{console.log(error)})
+
+	let promesa3=new Promise((resolve,error)=>{
+		setTimeout(()=>{
+			resolve("ejecutando la tarea3")
+		},7000)
+		
+	})
+	.then((data)=>{
+		console.log(data)
+	})
+	.catch((error)=>{console.log(error)})
+
+
+
+
+
+
+</script>

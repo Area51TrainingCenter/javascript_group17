@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+</body>
+</html>
+<script type="text/javascript">
+	/*let sumar=()=>{
+		// setTimeout(function,1000)
+		setTimeout(()=>{
+			console.log("sumando elementos");	
+		},4000);
+		
+	}
+	let restar=()=>{
+		console.log("restando elementos");
+	}
+
+	sumar();
+	restar();
+	*/
+
+	/*function calcular1(){
+		setTimeout(()=>{
+		return "calculo1";		
+		},1000);
+		
+	}
+	function calcular2(){
+		return "calcular2"
+	}
+
+	console.log(calcular1());
+	console.log(calcular2())
+*/
+
+
+
+	let promesa1=new Promise((resolve,reject)=>{
+		let estado=false;
+
+		if(estado==true){
+			setTimeout(()=>{
+				resolve("se ejecuto con exito la promesa");	
+			},3000)
+			
+		}
+		else{
+			setTimeout(()=>{
+				reject("hubo problemas");
+			},5000)
+			
+		}
+	})
+	.then((data)=>{
+		console.log(data);
+	})
+	.catch((data)=>{
+		console.log("estoy dentro del catch");
+		console.log(data);
+	})
+
+	console.log("Este código esta después de la promesa");
+
+
+	let promesa2= new Promise((res,error)=>{
+		res("resolvio correctamente la promesa n2")
+		error("presenta errores")
+	})
+	.then((data)=>{
+		console.log(data)
+	})
+	.catch((data)=>{data});
+
+
+
+</script>

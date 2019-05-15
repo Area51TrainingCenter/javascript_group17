@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+</body>
+</html>
+
+<script type="text/javascript">
+	let promesa1=new Promise((resolve,error)=>{
+		setTimeout(()=>{
+			error("tarea1")
+		},
+			2000)
+		
+	})
+	let promesa2=new Promise((resolve,error)=>{
+		setTimeout(()=>{
+			resolve("tarea2")
+		},
+			5000)
+		
+	})
+	let promesa3=new Promise((resolve,error)=>{
+		setTimeout(()=>{
+			resolve("tarea3")
+		},
+			6000)
+		
+	})
+	Promise.race([promesa1,promesa2,promesa3])
+	.then((data)=>{
+		console.log(data);
+	})
+	.catch((data)=>{
+		console.log("error" + data);
+	})
+
+
+</script>
