@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+</body>
+</html>
+<script type="text/javascript">
+	/*let promesa1=new Promise((resolve,reject)=>{
+		resolve("se logro con éxito");
+	})
+	.then((data)=>{
+		console.log(data)
+	})
+	.catch((error)=>{
+		console.log(error)
+	})*/
+	/*let url="https://reqres.in/api/users";
+	fetch(url)
+	.then((data)=>{return data.json()})
+	.then((respuesta)=>{
+		console.log(respuesta);
+	}) // promesa devolvio resolve o satisfactorio
+	.catch((error)=>{}) // promesa devolvio reject o error
+*/
+	cargarDatos(3);
+	function cargarDatos(pagina){
+		let url="https://reqres.in/api/users?per_page=4&page="+pagina;
+		fetch(url)
+		.then((data)=>{return data.json()})
+		.then((respuesta)=>{
+			console.log(respuesta);
+		}) // promesa devolvio resolve o satisfactorio
+		.catch((error)=>{}) // promesa devolvio reject o error
+	}
+</script>
