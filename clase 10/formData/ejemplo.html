@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<form id="registro">
+		<input type="text" name="edad" value="22">
+		<input type="text" name="codigo" value="11">
+		<input type="text" name="ruta" value="abcd">
+		<textarea name="comentario" >comentario asignado</textarea>
+		<select name="opcion">
+			<option value="1">item</option>
+			<option value="2" selected>Item</option>
+		</select>
+	</form>
+
+</body>
+</html>
+
+<script type="text/javascript">
+	
+	let datos=new FormData();
+	datos.append("id",123);
+	datos.append("nombre","Juan Carlos");
+	datos.append("correo","jtorriccelli1986@gmail.com");
+
+	let url="https://sminnova.com/demo/registro.php";
+	
+	let config={
+		method:"POST",
+		body:datos
+	}
+
+	fetch(url,config)
+	.then((data)=>{return data.json()})
+	.then((data)=>{console.log(data)});
+
+	let formulario=document.getElementById('registro');
+
+	let data2=new FormData(formulario);
+	data2.append("estado","true");
+	data2.append("fecha_modifcacion",now())
+	/*
+	{
+		estado:true,
+		fecha_modifcacion:now()
+	}
+	*/
+
+
+	let config2={
+		method:"POST",
+		body:data2
+	}
+
+	fetch(url,config2)
+	.then((data)=>{return data.json()})
+	.then((data)=>{console.log(data)});
+
+</script>

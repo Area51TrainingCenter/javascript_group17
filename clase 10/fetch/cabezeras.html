@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+</body>
+</html>
+<script type="text/javascript">
+	
+let cabezera=new Headers();
+cabezera.append("Content-type","text/plain");
+cabezera.append("X-mi-valor","Valor Propio");
+cabezera.append("X-prioridad","urgente");
+
+cabezera.has("X-prioridad"); // true
+cabezera.get("X-prioridad"); // urgente 
+cabezera.set("X-prioridad","controlado")
+cabezera.get("X-prioridad"); // controlado 
+
+cabezera.delete("X-prioridad");
+
+
+
+let header_2=new Headers({
+	"Content-type":"application/json",
+	"X-prioridad":"urgente"
+})
+
+let url="";
+
+let parametros_iniciales={
+	method:"GET",
+	headers:header_2,
+	body:"{'id':'1'}"
+}
+fetch(url,parametros_iniciales)
+.then((data)=>{console.log(data)})
+
+
+
+
+
+</script>

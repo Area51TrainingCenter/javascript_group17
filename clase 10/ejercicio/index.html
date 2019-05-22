@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-6">
+
+				<form class="pt-4">
+					<label>Filtrar</label>
+					<input type="text" id="buscar" class="form-control" name="">
+				</form>
+				<ul id="lista" class="pt-4">
+
+				</ul>
+			</div>
+		</div>
+	
+	</div>
+</body>
+</html>
+
+<script type="text/javascript">
+	let sitios=[];
+	let url="https://sminnova.com/restapitrujillo/sitiosturisticos"
+	if(localStorage.lista){
+
+		pintarLista(JSON.parse(localStorage.lista));
+	}
+	else{
+		fetch(url)
+			.then((data)=>{return data.json()})
+			.then(data=>{
+				console.log(data)
+				/*let tmp="";
+				for(let item of data){
+					tmp=tmp+`<li onclick="verdetalle()">${item.nombre}</li>`
+				}
+				document.getElementById('lista').innerHTML=tmp;
+				*/
+				pintarLista(data);
+				sitios=data;
+				localStorage.lista=JSON.stringify(data);
+			})
+	}
+
+
+	// url para traer sitio por id
+	
+
+	function verdetalle(id){
+		alert(id);
+		let url_sitio=`https://sminnova.com/restapitrujillo/sitiosturisticos/id/${id}`;
+		fetch(url_sitio)
+		.then((data)=>{return data.json()})
+		.then((data)=>{
+			
+			console.log(data)
+
+		})
+
+	}
+
+	let buscar=document.getElementById('buscar');
+	let resultado;
+	buscar.addEventListener("keyup",()=>{
+		resultado=[];
+		for(let sitio of sitios){
+			let nombre_bajas=sitio.nombre.toLowerCase();
+			let buscar_bajas=buscar.value.toLowerCase();
+
+			let estado=nombre_bajas.includes(buscar_bajas);
+			if(estado){
+				resultado.push(sitio)
+			}
+			
+		}
+	
+		//console.log(resultado);
+		pintarLista(resultado);
+
+	})
+
+	function pintarLista(data){
+		let tmp="";
+		for(let item of data){
+			tmp=tmp+`<li onclick="verdetalle('${item.id}')">${item.nombre}</li>`
+		}
+		document.getElementById('lista').innerHTML=tmp;
+	}
+
+
+
+
+</script>

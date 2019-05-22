@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+	<form id="registro">
+		<input type="text" name="nombre">
+		<input type="text" name="apellidos">
+		<input type="text" name="correo">
+	</form>
+</body>
+</html>
+
+<script type="text/javascript">
+	let obj=new FormData();
+	obj.append("nombre","juan carlos"),
+	obj.append("dni","123341233")
+
+
+
+	fetch(url,{method:"POST",body:obj})
+
+	let formulario=document.getElementById('registro');
+
+	let obj_2=new FormData(formulario);
+
+	fetch(url,{method:"POST",body:obj_2})
+	.then((data)=>{console.log(data)})
+
+
+</script>

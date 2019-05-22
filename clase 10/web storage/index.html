@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+</body>
+</html>
+
+<script type="text/javascript">
+	
+	/*console.log("hola");
+	document.cookie = "username=John-Doe";
+	let contenido=document.cookie;
+	console.log(contenido);*/
+
+ // sesion storage
+ console.log(sessionStorage.nombre);
+ console.log(sessionStorage.apellido);
+
+if(sessionStorage.nombre){
+console.log("SI existe definido este storage");
+}
+else
+{
+	console.log("no existe definido este storage");
+}
+ sessionStorage.nombre="Juan carlos";
+ sessionStorage.apellido="Ramos Torriccelli";
+ console.log(sessionStorage.nombre);
+ console.log(sessionStorage.apellido);
+console.log(localStorage.codigo);
+
+localStorage.codigo=123;
+console.log(localStorage.codigo);
+
+let lista=[{nombre:"jc"},{nombre:"diego"}];
+let lista_formateda=JSON.stringify(lista);
+console.log(lista_formateda);
+
+
+localStorage.listado=lista_formateda;
+console.log(JSON.parse(localStorage.listado));
+ // local storage 
+</script>

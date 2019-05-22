@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<form>
+	<input type="text" name="" id="nombre">
+	<input type="text" name="" id="appelido">
+</form>
+</body>
+</html>
+
+<script type="text/javascript">
+
+	let url="ruta";
+	let datos={
+		nombre:document.getElementById('nombre').value,
+		apellido:document.getElementById('apellido').value
+	}
+	let init={
+		method:"POST",
+		body:"{id:1}"
+	}
+	fetch(url,init)
+	.then((data)=>{ data })
+	.catch((data)=>{ data })
+</script>
