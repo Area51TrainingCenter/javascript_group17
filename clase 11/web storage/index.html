@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+	
+	</title>
+
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<style type="text/css">
+			.container{
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				height: 100vh;
+			}
+		</style>
+</head>
+<body>
+
+<div class="container">
+	<form style="width: 400px;">
+	  <div class="form-group"> 
+			<input type="text" placeholder="usuario"  class="form-control"  name="">
+		</div>
+
+		<div class="from-group">
+			<input type="text" placeholder="password" class="form-control" name="">
+		</div>
+			<div class="from-group mt-4">
+		<button class="btn btn-success">Enviar datos</button>
+		</div>
+	</form>
+</div>
+
+</body>
+</html>
+
+<script type="text/javascript">
+	sessionStorage.clear();
+	console.log(sessionStorage.estado);
+	sessionStorage.estado=true;
+	console.log(sessionStorage.estado);
+	localStorage.clear();
+	console.log(localStorage.dominio);
+
+	localStorage.dominio="http://demo.com";
+	
+	console.log(localStorage.dominio);	
+</script>
