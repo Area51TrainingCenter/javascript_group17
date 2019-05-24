@@ -30,7 +30,7 @@ btn_login.addEventListener("click",()=>{
 	let usuario=document.getElementById('usuario').value;
 	let password=document.getElementById('password').value;
 	
-	let estado_validacion=validar(usuario,password); // true or false
+	let estado_validacion=validar(usuario,password); // true or false penidente
 		if(estado_validacion){
 				
 		}
@@ -70,7 +70,14 @@ function validar(par_usuario,par_password){
 	}
 	fetch(url,init)
 	.then((data)=>{return data.json()})
-	.then((data)=>{console.log(data)});
+	.then((data)=>{
+		//console.log("aqui: "+data);
+		if(data==false){
+
+			intentos++
+		}
+		//console.log(data)
+	});
 	return estado;
 }
 

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+</body>
+</html>
+
+<script type="text/javascript">
+	
+
+async function obtenerSitios() {
+  // En lugar de usar fetch().then, usamos await
+  let url="https://sminnova.com/restapitrujillo/sitiosturisticos";
+  let contenido = await fetch(url); //10s
+  let texto = await contenido.json();
+
+  // Dentro de la función async, el texto es el body de la petición
+ 
+
+  // Retornamos el texto
+  return texto;
+}
+
+obtenerSitios().then((data)=>{ console.log(data)})
+
+
+async function estadoBancario(){
+	let bcp=await fetch("url_bcp").catch((error)=>{console.log(error)});
+	let interbank= await fetch("url_interbank",{body:bpc});
+	let scotia= await fetch("url",{body:interbank})
+	return scotia;
+
+}
+
+
+let consulta=new Promise((resolve,reject)=>{
+	//valide todo lo que tenia
+	resolve()
+})
+.then(()=>{})
+
+fetch(url)
+.then((data)=>{return data.json()})
+.then((data)=>{
+	data.credito
+	fetch(url_interbank).
+	.then((data)=>{ data.json()})
+	.then((data)=>{ 
+
+		fetch(url)
+			.then((data)=>{return data.json()})
+			.then((data)=>{
+				data.credito
+				fetch(url_interbank).
+				.then((data)=>{return data.json()})
+				.then((data)=>{ 
+
+					console.log(data)
+
+				} )
+			})
+
+	} )
+})
+
+
+async function main() {
+  let valor = await fetch('/');
+};
+
+
+let variable = async function main() {
+  let valor = await fetch('/');
+};
+
+
+
+let variable = async ()=>{
+  let valor = await fetch('/');
+};
+
+try{
+ await variable();
+}
+catch(e){
+	console.log(e)
+
+}
+
+</script>
