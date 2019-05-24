@@ -1,9 +1,10 @@
 
 validarBloqueo()
 
-setInterval(()=>{
+/*setInterval(()=>{
 	validarBloqueo()
 },1000)
+*/
 /*
 let validacion=new Promise((resolve,reject)=>{
 		let min=localStorage.minuto_bloque;
@@ -52,13 +53,24 @@ btn_login.addEventListener("click",()=>{
 
 
 
-function validar(usuario,password){
+function validar(par_usuario,par_password){
+
+	//https://sminnova.com/demo/login.php
+	//usuarios
+	//password
 	let estado=false;
 	//
-	if(usuario=="admin" && password==123456){
-		estado=true;
+	let url="https://sminnova.com/demo/login.php";
+	let datos=new FormData();
+	datos.append("usuario",par_usuario)
+	datos.append("password",par_password);
+	let init={
+		method:"POST",
+		body:datos
 	}
-
+	fetch(url,init)
+	.then((data)=>{return data.json()})
+	.then((data)=>{console.log(data)});
 	return estado;
 }
 
@@ -80,7 +92,6 @@ function validarBloqueo(){
 			document.getElementById('modal-aviso').classList.add("hide-modal")
 		}
 	}
-	//console.log(localStorage.hora_bloque)
-	//console.log(localStorage.minuto_bloque)
+	
 	
 }
