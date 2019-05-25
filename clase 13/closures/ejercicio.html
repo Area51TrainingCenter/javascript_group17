@@ -31,7 +31,7 @@
 </html>
 
 <script>
-	document.getElementById('op1').onclick=()=>{
+	/*document.getElementById('op1').onclick=()=>{
 		document.body.style.fontSize="16px"
 
 	}
@@ -42,5 +42,28 @@
 	document.getElementById('op3').onclick=()=>{
 		document.body.style.fontSize="30px"
 
+	}*/
+
+
+	function cambiarFuente(size){
+		return function(){
+			document.body.style.fontSize=size+"px";
+		}
 	}
+
+	let size16=cambiarFuente(16);
+	let size20=cambiarFuente(20);
+	let size30=cambiarFuente(30);
+
+	document.getElementById('op1').onclick=size16;
+	document.getElementById('op2').onclick=size20;
+	document.getElementById('op3').onclick=size30;
+
+
+	
+
+
+
+
+
 </script>

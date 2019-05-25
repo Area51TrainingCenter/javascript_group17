@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>
+	</title>
+</head>
+<body>
+	
+</body>
+</html>
+
+<script>
+	
+//alert(this.outerWidth);
+//console.log(this);
+
+let persona={
+	nombre:"Juan Carlos",
+	apellidos:"Ramos T.",
+	//nombre_completo:this.nombre+this.apellidos,
+	//nombre_completo: function() {
+	//	return this.nombre+this.apellidos;
+	//}
+	nombre_completo:"",
+	actualizar_nombre:function(){
+		this.nombre_completo=this.nombre+ " " +this.apellidos;
+	}
+}
+
+
+console.log(persona.nombre_completo);
+persona.actualizar_nombre()
+console.log(persona.nombre_completo);
+
+
+	function tarea(){
+		
+		return this.nombre;
+	}
+
+
+ let obj2={
+ 	nombre:"JC",
+ 	apellido:"RT"
+
+ }
+
+function mostarNombre(){
+	return this.nombre+this.apellido;
+}
+obj2.accion=mostarNombre;
+
+
+
+console.log(obj2.accion());
+console.log(mostarNombre()); 
+	
+
+
+
+let objPadre={
+	nombre:"Jc",
+	hijo:{
+		nombre:"Luciana",
+		mostarDatos:function(){
+			console.log(this.nombre)
+		}
+	}
+
+}	
+console.log(objPadre.hijo.mostarDatos());
+
+
+let objDemo={
+	nombre:"JC",
+	accion:function(){
+		let obj1=this;
+
+		let cambio=function(){
+			return obj1.nombre+" .-";
+		}
+	}
+}
+
+console.log(objDemo.accion());
+
+
+// CALL APPLY
+
+
+function orden(valor){
+	this.precio=valor;
+}
+
+
+let orden1=new orden(400);
+let orden2=new orden(100);
+
+function calcularTotal(procentaje,envios){
+	this.totalPrecio=this.price+procentaje+envios;
+
+}
+orden1.calculo=calcularTotal;
+orden1.calculo();
+
+
+calcularTotal.call(orden1,20,30);
+calcularTotal.call(orden2,40,2);
+
+conosole.log(orden1.totalPrecio);
+
+calcularTotal.apply(orden1,[30,4]);
+
+console.log(orden1);
+
+var order3=new order(50);
+
+function calcularTotal3(procentaje,envios){
+	this.totalPrecio=this.price+procentaje+envios;
+
+}
+
+
+
+</script>
