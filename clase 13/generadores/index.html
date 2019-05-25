@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+</html>
+
+<script>
+	
+function* listar(){
+ yield 1;
+ yield 2;
+ yield 3;
+}
+
+ 
+let listado=listar();
+
+console.log(listado.next());
+
+console.log(listado.next());
+
+console.log(listado.next());
+
+console.log(listado.next());
+
+
+function* incremento(){
+	let i=0;
+	while(true){
+		yield  ++i;
+	}
+}
+let inc=incremento();
+console.log(inc.next());
+console.log(inc.next());
+console.log(inc.next());
+console.log(inc.next());
+console.log(inc.next());
+console.log(inc.next());
+
+
+function* serie(){
+	yield 1;
+	yield 2;
+	yield* subserie();
+	yield 3;
+	return 4
+
+}
+
+
+function* subserie(){
+	yield "estoy entrando en la sub serie";
+	yield "estoy dentro de la sub serie";
+	yield "estoy Saliendo de la sub serie";
+
+}
+
+let dato_serie=serie();
+
+console.log(dato_serie.next());
+console.log(dato_serie.next());
+console.log(dato_serie.next());
+console.log(dato_serie.next());
+console.log(dato_serie.next());
+console.log(dato_serie.next());
+console.log(dato_serie.next());
+
+
+function* sumatoria(i){
+	yield i+1
+	yield i+10
+}
+
+let sumat=sumatoria(5)
+console.log(sumat.next());
+console.log(sumat.next());
+
+
+function* tarea(){
+	let indice=0;
+	while(indice<3){
+	yield ++indice;
+	}
+	return -1
+}
+
+let _tarea=tarea();
+
+console.log(_tarea.next());
+
+console.log(_tarea.next());
+
+console.log(_tarea.next());
+
+console.log(_tarea.next());
+
+
+/*
+
+function suma(){
+	let dato=0;
+	let dato++;
+	console.log(dato);
+}
+
+
+suma()
+
+suma()
+*/
+
+
+</script>

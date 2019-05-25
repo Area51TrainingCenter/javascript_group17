@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+</html>
+
+<script>
+	
+	let data=10;
+
+	function datos (){
+		 data=20;
+	}
+
+
+
+function inicia() {
+  var nombre = "Mozilla"; // 'nombre' es una variable local creada por la función 'inicia'
+  function muestraNombre() { // 'muestraNombre' es una función interna (un closure)
+    //alert(nombre); // dentro de esta función usamos una variable declarada en la función padre
+  }
+  muestraNombre();
+}
+inicia()
+
+
+function creaFunc(valor) {
+  var nombre = "Mozilla";
+  function muestraNombre() {
+    alert(5*valor);
+
+  }
+  return muestraNombre;
+}
+
+var nuevafucnion=creaFunc(5);
+
+
+var miFunc1=creaFunc(2);
+var miFunc2=creaFunc(4);
+
+
+
+function creaSumador(x) {
+  return function(y) {
+    return x + y;
+  };
+}
+
+
+let suma=creaSumador(10);
+console.log(suma(5));
+
+console.log(suma(7));
+
+
+function creaOperacion(operador) {
+	let retorno;
+	function resta(num1,num2){
+		//operaciones
+		return num1-num2
+	}
+	function suma(num1,num2){
+		// operaciones
+		return num1+num2;
+	}
+
+	if(operador=="suma");
+	{
+		retorno=suma();
+	}else{
+		retorno=resta();
+	}
+
+
+  return retorno;
+}
+
+
+
+
+
+let resta=creaOperacion("resta");
+resta(10,4);
+
+
+let suma=creaOperacion("suma");
+suma(23,4);
+
+
+
+</script>
