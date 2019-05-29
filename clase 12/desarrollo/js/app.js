@@ -1,15 +1,12 @@
 let grabar=document.getElementById('grabarContacto');
 
 
-let objContacto=new Contacto();
+let objContacto=new Contacto(); // aqui se ejecuta el constructor
 grabar.addEventListener("click",()=>{
 	
 	let datos=new FormData(document.getElementById("registro"));
 
-	/*datos.get("nombre")
-	datos.get("apellido")
-	datos.get("telefono")
-	datos.get("dni")*/
+
 
 	let valores=[datos.get("nombre"),
 				 datos.get("apellido"),
@@ -19,18 +16,15 @@ grabar.addEventListener("click",()=>{
 
 	
 	objContacto.agregarContacto(...valores);
+	let estructura=objContacto.listadoHtml();
+	document.getElementById("listado").innerHTML=estructura;
 
-
-
-	/*
-
-	let registro=document.getElementById("registro");
-	console.log(registro);
-	console.log(datos);
-	datos.append("nombre","juan carlos"),
-	datos.append("dni","123341233")
-	console.log(datos.nombre);*/
 
 })
 
 
+function verdatalle(valor){
+	console.log(valor);
+	alert("click en li")
+	//Contacto.seleccionado(valor)
+}

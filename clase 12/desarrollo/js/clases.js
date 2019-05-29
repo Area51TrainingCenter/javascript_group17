@@ -8,17 +8,23 @@ class Contacto{
 		this._listado=[];
 	}*/
 	constructor(){
-		this._obj={
+		
+		this._listado=[];
+	}
+
+	static seleccionado(ind)
+	{
+		return this._listado[ind];
+	}
+
+	agregarContacto(nombre,apellido,dni,telefono,usuario="12312312"){
+		this._obj=Object.create({
 			nombre:"",
 			apellido:"",
 			dni:"",
 			telefono:"",
 			usuario:""
-		}
-		this._listado=[];
-	}
-
-	agregarContacto(nombre,apellido,dni,telefono,usuario="12312312"){
+		});
 		this._obj.nombre=nombre;
 		this._obj.apellido=apellido;
 		this._obj.dni=dni;
@@ -31,6 +37,14 @@ class Contacto{
 	mostarContacto(){
 		console.log(this._nombre);
 		console.log(this._apellido)
+	}
+
+	listadoHtml(){
+		let temp="";
+		for(let item of this._listado){
+			temp=temp+`<li onclick="verdatalle(${item.dni})">${item.nombre} ${item.apellido}</li>`;
+		}
+		return temp;
 	}
 
 }
