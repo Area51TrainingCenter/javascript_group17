@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+</body>
+</html>
+
+<script type="text/javascript">
+	/*function persona(){
+
+		let nombre="JC";
+		let apellido="RT"
+	}
+
+	let obj=new persona();
+	console.log(obj.nombre);
+*/
+
+
+	class Curso{
+		constructor(valor1="no ingresado",valor2){
+			this.nombre=valor1;
+			this.apellido=valor2;
+			this.estado=true;
+		}
+		
+		mostarCurso(){
+			console.log(this.nombre);
+		}
+		mostrarEstado(){
+			console.log(this.estado);
+		}
+
+
+
+	}
+
+	let obj_curso=new Curso("JC","RT");
+
+	obj_curso.mostarCurso();
+	console.log(obj_curso.nombre);
+	obj_curso.mostrarEstado()
+
+	 let figura=class {
+	 	constructor(a,b){
+	 		this.a=a;
+	 		this.b=b;
+	 	}
+	 	calcular(){
+	 		return this.a*this.b;
+	 	}
+
+	 }
+	 //let dato;
+	 console.log(dato)
+	 let dato=5;
+
+
+	 // esto da error 
+	 let unidad=new Unidad();
+
+	 class Unidad(){
+
+	 }
+	
+
+
+	 // no da error
+	 class Unidad(){
+
+	 }
+	 let unidad=new Unidad();
+
+
+	 class Demo {
+	 	constructor(nombre,apellido){
+	 		this.nombre=nombre;
+	 		this.apellido=apellido;
+	 	}
+	 }
+</script>

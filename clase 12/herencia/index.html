@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+</body>
+</html>
+
+<script type="text/javascript">
+	
+class Persona{
+	constructor(nombre,correo,telefono){
+		this._nombre=nombre;
+		this._correo=correo;
+		this._telefono=telefono;
+	}
+	mostrarDatos(){
+		console.log(this._nombre + this._correo);
+	}
+}
+
+class Alumno extends Persona{
+	constructor(nombre,correo,telefono,cursos){
+		super(nombre,correo,telefono);
+		this._cursos=cursos;
+	}
+
+}
+
+class Profesor extends Alumno{
+	constructor(nombre,correo,telefono,salones){
+		super(nombre,correo,telefono);
+		this._salones=salones;
+		
+	}
+}
+
+let objAlumno=new Alumno("Juan", "alumno@mail.com","987345432",4);
+objAlumno.mostrarDatos();
+
+let objProfesor=new Profesor("Profesor", "profesor@mail.com","987345432",15);
+objProfesor.mostrarDatos();
+</script>

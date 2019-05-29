@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+</body>
+</html>
+
+<script type="text/javascript">
+	
+	class Persona{
+		constructor(nombre,apellido,correo="no registrado"){
+			this._nombre=nombre;
+			this._apellido=apellido;
+			this._correo=correo;
+			this._estado=true;
+		}
+		mostarPersona(){
+			console.log(this._nombre);
+
+		}
+
+		static validarEstado(){
+			console.log(this._estado);
+		}
+
+		get getNombre(){
+			return this._nombre;
+		}
+		set setNombre(valor){
+			this._nombre=valor;
+		}
+	}
+
+
+	let obj=new Persona("Jc","Ramos Torriccelli");
+	obj.mostarPersona();
+	console.log(obj.getNombre);
+
+	console.log(obj.setNombre("diego"));
+
+	console.log(obj.getNombre);
+
+	//obj.validarEstado();
+
+
+	Persona.validarEstado();
+
+
+	class Utilitarios{
+
+		constructor(){
+
+		}
+
+		static imprimir(valor){
+			console.log(valor);
+		}
+		static fechaFormato()
+		{
+			let fecha=new Date();
+			let formato=`${fecha.getFullYear()}-${fecha.getMonth()}-${fecha.getDate()}` 		
+			console.log(formato)
+		}
+	}
+
+	Utilitarios.fechaFormato();
+	Utilitarios.imprimir("hola");
+</script>
