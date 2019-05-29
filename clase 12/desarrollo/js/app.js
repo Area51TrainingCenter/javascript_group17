@@ -1,7 +1,7 @@
 let grabar=document.getElementById('grabarContacto');
 
 
-
+let objContacto=new Contacto();
 grabar.addEventListener("click",()=>{
 	
 	let datos=new FormData(document.getElementById("registro"));
@@ -11,11 +11,16 @@ grabar.addEventListener("click",()=>{
 	datos.get("telefono")
 	datos.get("dni")*/
 
-	let valores=[datos.get("nombre"),datos.get("apellido"),datos.get("telefono"),datos.get("dni")]
+	let valores=[datos.get("nombre"),
+				 datos.get("apellido"),
+				 datos.get("telefono"),
+				 datos.get("dni")]
 
-	let objContacto=new Contacto(...valores);
+
 	
-	objContacto.mostarContacto();
+	objContacto.agregarContacto(...valores);
+
+
 
 	/*
 
