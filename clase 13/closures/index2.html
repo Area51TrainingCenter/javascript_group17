@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<h1>Texto a modificar</h1>
+</body>
+</html>
+
+<script>
+	
+	function imprimir(valor1){
+		console.log(valor1)
+
+		return function corregir(){
+			console.log("corrigiendo texto")
+		}
+		
+	}
+
+let tarea=imprimir("desde aquí"); 
+
+
+
+function makerFunction(){
+
+}
+
+function tarea(){
+	return false;
+}
+
+let estado=tarea();
+
+
+
+function Multiplo(multiplo){
+
+	return ejecutar(valor){
+		let resultado=valor%multiplo;
+		let estado=false;
+		if(resultado==0){
+			estado=true;
+		}
+		else{
+			estado=false;
+		}
+		return estado;
+	}
+}
+
+
+
+let multiplo2=Multiplo(2);
+multiplo2(20);
+
+
+let multipo5=Multiplo(5);
+multipo5(25)
+
+let multipo4=Multiplo(4);
+multipo(16);
+
+
+
+
+</script>

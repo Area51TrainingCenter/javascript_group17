@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+</html>
+
+<script>
+	//console.log(this)
+
+
+	function calcular(){
+		console.log(this)
+
+	}
+	let obj={
+		nombre:"jc",
+		apellido:"RT",
+		saludar: function (){
+			let padre=this;
+			console.log(this.nombre);
+			function despedir(){
+				console.log(padre.nombre);
+			
+			}
+
+			despedir();
+		}
+	}
+
+	// calcular();
+
+	// obj.saludar();
+
+
+	let obj2={
+		nombre:"JC",
+		apellido:"RT"
+	
+	}
+
+	function alerta(){
+		console.log(this);
+	}
+	obj2.tarea=alerta;
+
+	/*
+		obj2.nombre="DIEGO";
+
+		obj2.tarea=alerta;
+		
+		obj2.tarea();
+
+	*/
+	alerta()
+	obj2.tarea();
+
+
+	class orden{
+		constructor(valor){
+			this.precio=valor
+		}
+	}
+
+
+
+
+	let orden1=new orden(400);
+	let orden2=new orden(100);
+
+	orden1.calculo=calcularIGV;
+
+	function calcularIGV(valor1,valor2,valor3,valor4){
+		console.log(this.precio*0.18);		
+	}
+	 console.log(orden1.calculo())
+
+
+	calcularIGV.call(orden1,"texto","texto2","texto3","texto4")	
+	//calcularIGV.call(objeto_referencia,par1,par2,...)
+
+	calcularIGV.apply(orden2,["texto1","texto2","valor3,valor4"]);
+	//calcularIGV.apply(objeto_referencia,[valor1,valor2])
+
+	calculoOrden1=calcularIGV.bind(orden1,"texto1","texto2","texto3","texto4");
+	
+	calculoOrden2=calcularIGV.bind(orden2,"texto1","texto2","texto3","texto4");
+
+	calculoOrden1();
+	calculoOrden2();
+
+
+
+
+
+
+
+
+
+
+
+</script>
