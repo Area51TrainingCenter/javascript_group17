@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+</head>
+<body>
+
+<div id="texto"></div>
+</body>
+</html>
+<script type="text/javascript">
+let xhr=new XMLHttpRequest;
+/*
+let promesa1=new Promise((resolve,reject)=>{
+	let url="https://jsonplaceholder.typicode.com/todos/1";
+	xhr.open("GET",url,true);
+
+	xhr.send(null);
+
+	if (xhr.status==200){
+		console.log(xhr);
+		
+		resolve(xhr.responseText);
+	}
+})
+.then((data)=>{
+	console.log(data)
+	document.getElementById('texto').innerHTML=data
+})
+*/
+
+let url2="https://jsonplaceholder.typicode.com/todos/1";
+let url="https://reqres.in/api/users";
+	xhr.open("GET",url,true);
+
+
+	xhr.send(null);
+	xhr.onreadystatechange=()=>{
+		if (xhr.status==200){
+			//console.log(xhr.getAllResponseHeaders())
+				console.log(xhr.readyState);
+				console.log(xhr.responseText);
+				console.log(JSON.parse(xhr.responseText));
+				document.getElementById('texto').innerHTML=xhr.responseText
+		//resolve(xhr.responseText);
+		}	
+	}
+	
+
+
+//https://reqres.in
+
+
+
+</script>
