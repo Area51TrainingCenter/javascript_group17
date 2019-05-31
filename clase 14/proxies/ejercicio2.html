@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+</html>
+
+<script>
+	let persona={
+		nombre:"juan carlos",
+		edad:22
+	}
+
+	let handler={
+		get(obj,propiedad){
+			return obj[propiedad].toUpperCase();
+		},
+		set(obj,propiedad,valor){
+			// validar si la propiedad es edad
+			if(propiedad=="edad"){
+
+				if(valor>0 && valor<51){
+					//obj[propiedad]=valor;
+					console.log("se actualizo con éxito");
+					//modal mensajer 
+				}
+				else{
+					throw new RangeError("El valor ingresado no es correcto");
+					//console.log("error");
+				}
+			}
+			
+			obj[propiedad]=valor;
+			
+			
+
+			
+
+		}
+	}
+
+	let personaProxy=new Proxy(persona,handler);
+
+
+	try{
+		personaProxy.edad=100; // throw "valor ingresado no es correcto";	
+	}
+	catch(e){
+		alert(e.name + ": "+ e.message);
+	}
+	
+console.log(personaProxy.nombre);
+	//personaProxy.nombre="DIEGO";
+
+	console.log(personaProxy.edad);
+</script>

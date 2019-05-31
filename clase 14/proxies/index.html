@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+</html>
+
+
+<script>
+	
+	let objeto={
+		nombre:"JC",
+		apellido:"RT",
+		stock:20
+
+	}
+	let celular={
+		marca:"apple",
+		precio:2000,
+		stock:100
+	}
+
+	objeto.nombre // accediendo al atributo nombre
+	objeto.apellido="Ramos Torriccelli"  // actualizando el valor 
+
+	let manejador={
+		get(objeto, propiedad) {
+				let rol="empleado"
+				if(propiedad=="stock"){
+					if(rol=="admin"){
+						return objeto[propiedad];
+					}
+					else{
+						return "no tienes permiso para ver esta propiedad";
+					}
+					
+				}
+				else{
+					return objeto[propiedad];
+				}
+				//console.log("estoy en el manejador");
+				//return objeto[propiedad];
+				//return objetivo[propiedad].toUpperCase();
+		}	,
+		set(objeto,propiedad,valor){
+			console.log("estoy en el update de el manejador");
+			
+		}
+	}
+	
+	let proxy = new Proxy(objeto, manejador)
+
+	//console.log(proxy.nombre);
+	console.log(proxy.stock);
+
+	//proxy.nombre="diego";
+
+
+	let persona={
+		nombre:"juan",
+		edad:20;
+	}
+
+	// Realizar una validador que permitar manejar el valor ingresado en la edad que no sea mayor a 50 años
+
+	
+
+
+
+</script>

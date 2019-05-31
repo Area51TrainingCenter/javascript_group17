@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+</html>
+
+
+<script>
+	
+	let datos=new Map();
+
+	datos.set("nombre","juan Carlos");
+	datos.set("apellidos","Ramos Torriccelli");
+	datos.set("correo","jtorriccelli@gmail.com");
+	datos.set("DNI","123123123");
+	console.log(datos.size);
+
+	let lista=[1,2,3];
+	console.log(lista);
+
+	let obj={
+		nombre:"",
+		dni:""
+
+	}
+
+	let cadena=new String("hola");
+	cadena.length;
+
+	console.log(obj)
+
+	console.log(cadena);
+	//console.log(datos);
+	
+	//console.log(datos.get("nombre"));
+	//console.log(datos.get("correo"))
+
+
+	for(let item of datos){
+		console.log(item);
+	}
+
+	for(let [key,value] of datos){
+		console.log(key);
+		console.log(value);
+	}
+
+	for(let item of datos.values()){
+		console.log(item);
+	}
+
+	for(let item of datos.keys()){
+		console.log(item);
+	}
+
+
+	// validar si un Key ya esta registrado
+
+	console.log(datos.has("dni"));
+	console.log(datos.get("correo"));
+	console.log(datos.delete("correo"));
+	console.log(datos.get("correo"));
+
+
+
+
+
+
+
+
+
+
+
+	/*let data={
+		nombre:"juan"
+		apellidos:"ramos"
+		correo:"@gmail.com"
+	}*/
+
+	//data.nombre;
+
+
+	/*
+	nombre=Juan Carlos
+	apellidos=ramos Torriccelli
+	correo= jtorriccelli@gmail.com
+	*/
+
+
+
+
+
+	/*
+	let data={
+		nombre:"juan"
+		apellidos:"ramos"
+		correo:"@gmail.com"
+	}*/
+	/*
+	nombre:"juan"
+	apellidos:"ramos"
+	correo:"@gmail.com"
+	*/
+	/*
+
+	let lista=["juan","ramos","@gmail.com"]
+
+	0="juan"
+	1="ramos"
+	2="@gmail"
+*/
+
+
+
+
+
+</script>

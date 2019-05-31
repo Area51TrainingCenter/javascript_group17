@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+	<ul>
+		<li id="font12">Font size 12px</li>
+		<li id="font20">Font size 20px</li>
+		<li id="font30">Font size 30px</li>
+	</ul>	
+
+	<h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis accusantium quasi repellendus corporis magnam esse, itaque nostrum at hic adipisci eius ullam voluptatum quam. Corporis quasi saepe aut temporibus esse.</h1>
+</body>
+</html>
+
+<script>
+	
+	function creadora(valor){
+		//return true;
+		return function cambio(){
+			console.log(valor)
+
+		}
+	}
+/*
+	let fun=creadora(5);
+
+	
+	fun();
+	fun();
+	fun();
+	fun();
+	fun();
+
+	let fun2=creadora(10)
+	fun2();
+	fun2();
+	fun2();
+*/
+
+function cambioSize(valor){
+	return function(){
+		//document.body.style.fontSize=size+"px";
+		document.body.style.fontSize=valor+"px";
+	}
+}
+let cambio12=cambioSize(12);
+
+let cambio30=cambioSize(30);
+
+let cambio20=cambioSize(20);
+
+let cambio50=cambioSize(50);
+
+
+document.getElementById('font12').onclick=cambio12;
+document.getElementById('font20').onclick=cambio20;
+document.getElementById('font30').onclick=cambio30;
+
+
+
+</script>

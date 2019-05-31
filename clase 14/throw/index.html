@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+</html>
+
+<script>
+	
+
+	function calcular(){
+		//throw "hubo un problema al ejecutar la funcion";
+		throw new RangeError("valor no esta dentro del rango");
+		//throw new EvalError("problemas al cargar la información");
+		//throw new RangeError("el valor ingresado no esta en el rango");
+		return 10
+	}
+	function validar(){
+		return true
+	}
+
+
+
+	try{
+		calcular();
+	}
+	catch(e){
+		//
+		/*
+		e.name==RangeError{
+			// ejecutamete
+		}
+		e.name==TypeError
+		{
+			//ejecuta esto
+
+		}
+
+		*/
+		console.log(e);
+		console.log(e.name);
+		console.log(e.message)
+		//console.log(e);
+		//alert("los datos ingresados no fueron correctos, la operacion no se pudo realizar");
+	}
+
+
+
+	console.log("esto va despues del calcular");
+	//validar();
+
+
+	function isNumber(valor){
+		if(valor/0>1){
+			return true
+		}
+		else{
+			return false;
+		}
+	}
+
+
+
+
+	function sumar(valor1,valor2){
+		if(!isNumber(valor1) && !isNumber(valor2)){
+			//alert("datos incorrectos");
+			//ele.show();
+			throw "valores no son los correctos, ingresa numeros"
+		}
+
+		let suma=valor1+valor2;
+	}
+
+	try{
+		sumar("hola",10);  // throw "valores no son los correctos, ingresa numeros"
+	}
+	catch(error){
+		console.log(error);
+	}
+	
+
+
+
+</script>
