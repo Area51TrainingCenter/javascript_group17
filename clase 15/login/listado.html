@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+<body>
+	<h1>Listado de contactos</h1>
+	<ul id="contatos">
+		
+	</ul>
+	<a href="agregarcontacto.html">Agregar Contacto</a>
+
+	<script>
+			// para grabar contacto
+			let registro="https://sminnova.com/restapitrujillo/registro/contacto"
+			/*
+			nombre
+			apellido
+			telefono
+			dni
+			idusario // tudni
+			*/
+
+			//
+			let listado="https://sminnova.com/restapitrujillo/contacto/lista"
+			//idusuario //tu dni
+			let datos=new FormData();
+			datos.set("dni","123")
+			let config={
+				method:"POST",
+				body:datos
+			}
+			fetch(listado,config)
+			.then((data)=>{return data.json()})
+			.then((data)=>{
+
+				console.log(data[0]);
+				let temp="";
+				/*for(let item of data){
+					temp=temp+`<li>${item.nombre} ${item.apellido}</li>`;
+				}*/
+				//				document.getElementById("contatos").innerHTML=temp;
+
+				document.getElementById("contatos").innerHTML=`<li>${data[0].nombre} ${data[0].apellido}<button onclick="realizarPago('${data[0].dni}')">Pagar</button></li>`;
+			});
+
+
+			function realizarPago(valor){
+				console.log(valor);
+				localStorage.usuarioPago=valor;
+				window.location="transaccion.html";
+			}
+	</script>
+</body>
+</html>

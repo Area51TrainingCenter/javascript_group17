@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+    <form action="">
+        <input type="text" name="dni">
+        <input type="text" name="monto" id="inp_monto">
+        <input type="text" name="idusuario">   
+    </form>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    let usuarioPago=localStorage.getItem("usuarioPago");
+    
+    let idusuario=localStorage.getItem("usuario");
+    let monto=document.getElementById("inp_monto").value;
+    let transaccion="https://sminnova.com/restapitrujillo/registro/transaccion"
+    /*
+    dni
+    monto
+    dni_usuario 
+    */
+    let config;
+    fetch(url,config)
+    .then()
+    .then()
+    let transaccion="https://sminnova.com/restapitrujillo/registro/transaccion_listado"
+    // devuelve el historial
+</script>
